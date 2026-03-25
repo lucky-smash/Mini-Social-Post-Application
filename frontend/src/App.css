@@ -73,3 +73,268 @@
   color: #0066cc;
   text-decoration: none;
 }
+
+/* =========================================
+   📱 FEED PAGE UI & MOCKUP STYLES
+   ========================================= */
+
+.feed-container {
+  max-width: 500px;
+  margin: 0 auto;
+  background: #f0f2f5;
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 60px; /* Space for bottom nav */
+}
+
+/* TOP NAV */
+.feed-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: white;
+}
+.feed-nav h2 {
+  font-size: 18px;
+  font-weight: 800;
+}
+.nav-icons { display: flex; gap: 8px; align-items: center; font-size: 14px; }
+.badge-coin { background: #fff3e0; color: #f57c00; padding: 2px 10px; border-radius: 12px; font-weight: bold; border: 1px solid #ffe0b2; }
+.badge-rupee { background: #e8f5e9; color: #4caf50; padding: 2px 10px; border-radius: 12px; font-weight: bold; border: 1px solid #c8e6c9; }
+.bell-icon { font-size: 18px; color: #888; }
+.avatar-circle { width: 30px; height: 30px; border-radius: 50%; background: #0066cc; }
+
+/* SEARCH */
+.search-bar {
+  padding: 0 20px 15px 20px;
+  background: white;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 8px solid #f0f2f5;
+}
+.search-bar input {
+  flex: 1;
+  padding: 10px 15px;
+  border: none;
+  background: #f0f2f5;
+  border-radius: 20px;
+  outline: none;
+}
+.search-btn {
+  width: 35px; height: 35px;
+  border-radius: 50%; border: none;
+  background: #1877f2; color: white;
+  display: flex; justify-content: center; align-items: center;
+}
+.moon-btn {
+  width: 35px; height: 35px; border-radius: 50%;
+  border: none; background: #e4e6eb; display: flex; justify-content: center; align-items: center; font-size: 16px;
+}
+
+/* CREATE POST */
+.create-post-section {
+  background: white;
+  padding: 15px 20px;
+  border-bottom: 8px solid #f0f2f5;
+}
+.create-post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.create-post-header h3 { font-size: 16px; color: #1a1a1a; }
+.toggle-tabs {
+  display: flex;
+  background: #f0f2f5;
+  border-radius: 20px;
+  padding: 3px;
+}
+.toggle-tabs button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 15px;
+  background: transparent;
+  font-size: 11px;
+  font-weight: bold;
+  color: #666;
+}
+.toggle-tabs button.active {
+  background: #0066cc;
+  color: white;
+}
+.create-post-input {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  align-items: center;
+}
+.small-avatar { width: 35px; height: 35px; border-radius: 50%; background: #ccc; }
+.create-post-input input {
+  flex: 1; border: none; outline: none; font-size: 14px;
+}
+.create-post-actions {
+  display: flex; justify-content: space-between; align-items: center;
+}
+.action-icons { display: flex; gap: 15px; align-items: center; color: #1877f2;}
+.promote-btn { font-size: 13px; font-weight: 700; display: flex; align-items: center; gap: 4px; }
+.post-btn {
+  background: #e4e6eb; color: #bcc0c4;
+  border: none; padding: 8px 18px;
+  border-radius: 20px; font-weight: 700; font-size: 13px; letter-spacing: 0.5px;
+}
+
+/* FEED PILLS */
+.filter-scroll {
+  display: flex;
+  overflow-x: auto;
+  padding: 15px 20px;
+  gap: 10px;
+  background: white;
+  border-bottom: 1px solid #eee;
+}
+.filter-scroll::-webkit-scrollbar { display: none; }
+.pill {
+  white-space: nowrap; padding: 6px 16px;
+  border: none; border-radius: 20px;
+  background: transparent; font-size: 13px; font-weight: 700; color: #65676b; cursor: pointer;
+}
+.pill.active { background: #1877f2; color: white; box-shadow: 0 4px 10px rgba(24,119,242,0.2); }
+
+/* POST CARD */
+.post-card {
+  background: white;
+  padding: 15px 20px;
+  margin-bottom: 10px;
+}
+.post-header {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  margin-bottom: 12px;
+}
+.post-author-info { display: flex; gap: 10px; }
+.author-avatar { width: 40px; height: 40px; border-radius: 50%; background: #ffcccc; }
+.author-details h4 { font-size: 15px; margin: 0; color: #050505; font-weight: bold; }
+.author-details .handle { font-weight: normal; color: #65676b; font-size: 13px; margin-left: 5px; }
+.post-time { font-size: 12px; color: #65676b; display: block; margin-top: 3px; }
+.follow-btn {
+  background: #1877f2; color: white; border: none;
+  padding: 5px 15px; border-radius: 20px; font-size: 13px; font-weight: 700; letter-spacing: 0.3px; cursor: pointer;
+}
+.post-content p { font-size: 14px; line-height: 1.5; margin-bottom: 12px; color: #333; }
+.hashtags { color: #0066cc; }
+
+/* MOCKUP IMAGE */
+.post-image-banner {
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  border-radius: 12px; padding: 40px 20px;
+  text-align: center; color: white; margin: 15px 0;
+}
+.post-image-banner h3 { margin-bottom: 8px; font-size: 20px; }
+.post-image-banner p { color: white; font-weight: bold; }
+
+/* POST ACTIONS */
+.post-actions {
+  display: flex; justify-content: space-between;
+  border-top: 1px solid #eee; padding-top: 15px; padding-left: 20px; padding-right: 20px;
+}
+.post-actions button {
+  background: none; border: none; color: #888;
+  font-size: 14px; font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 5px;
+}
+
+/* BOTTOM NAV */
+.bottom-nav {
+  position: fixed; bottom: 0; left: 50%; transform: translateX(-50%);
+  width: 100%; max-width: 500px;
+  background: #1877f2;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0 25px; height: 60px;
+  color: white; font-size: 20px;
+}
+.nav-item { cursor: pointer; }
+.floating-social-wrapper {
+  display: flex; flex-direction: column; align-items: center;
+  transform: translateY(-15px);
+}
+.floating-social-btn {
+  background: #1877f2; color: white;
+  width: 55px; height: 55px;
+  border-radius: 50%; border: 4px solid white;
+  display: flex; justify-content: center; align-items: center;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+  font-size: 24px;
+}
+.social-text { font-size: 10px; color: white; margin-top: 2px; font-weight: bold; }
+
+/* =========================================
+   🖥️ RESPONSIVE DESKTOP (PC) STYLES
+   ========================================= */
+
+/* On tiny phones, ensure login card doesn't hit the screen edges */
+.login-container {
+  padding: 20px;
+}
+
+/* When the screen is a PC/Tablet (wider than 768px), expand the feed gorgeously! */
+@media screen and (min-width: 768px) {
+  .feed-container {
+    max-width: 700px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 30px rgba(0,0,0,0.05);
+  }
+  
+  .bottom-nav {
+    max-width: 700px;
+  }
+
+  .post-image-banner {
+    padding: 80px 20px; /* Expands the placeholder image beautifully on desktop */
+  }
+  
+  .search-bar input {
+    font-size: 16px;
+  }
+}
+
+/* =========================================
+   🌙 INSTANT DARK MODE THEME OVERRIDES
+   ========================================= */
+
+body.dark-theme, body.dark-theme .feed-container, body.dark-theme .login-container { 
+  background: #18191a !important; 
+  color: #e4e6eb !important; 
+  border-color: #3e4042 !important; 
+  box-shadow: none !important; 
+}
+
+/* Turn cards and sections stark dark gray */
+.dark-theme .feed-nav, 
+.dark-theme .search-bar, 
+.dark-theme .create-post-section, 
+.dark-theme .filter-scroll, 
+.dark-theme .post-card, 
+.dark-theme .login-card { 
+  background: #242526 !important; 
+  color: #e4e6eb !important; 
+  border-bottom-color: #18191a !important; 
+}
+
+/* Fix Typography */
+.dark-theme h2, .dark-theme h3, .dark-theme h4, .dark-theme .author-details h4 { color: #e4e6eb !important; }
+.dark-theme p, .dark-theme .author-details .handle, .dark-theme .post-time, .dark-theme .action-icons { color: #b0b3b8 !important; }
+
+/* Fix Inputs and Tabs */
+.dark-theme input, .dark-theme .toggle-tabs, .dark-theme .moon-btn, .dark-theme .pill { 
+  background: #3a3b3c !important; 
+  color: #e4e6eb !important; 
+}
+.dark-theme input::placeholder { color: #b0b3b8 !important; }
+.dark-theme .pill.active { background: #2d88ff !important; color: white !important; }
+.dark-theme .search-bar input { background: #3a3b3c !important; }
+
+/* Subtle Borders */
+.dark-theme .post-actions { border-top-color: #3e4042 !important; }
+.dark-theme .post-actions button { color: #b0b3b8 !important; }
+.dark-theme .post-btn { background: #3a3b3c !important; color: #b0b3b8 !important; }

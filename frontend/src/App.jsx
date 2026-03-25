@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Login from './pages/Login.jsx'
 import Register from './pages/Register.jsx'
+import Feed from './pages/Feed.jsx'
 import './App.css'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
@@ -11,6 +12,7 @@ function App() {
         <Route path="/" element={<Navigate to="/login" />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/feed" element={<Feed />} />
       </Routes>
     </BrowserRouter>
   )

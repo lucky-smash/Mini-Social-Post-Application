@@ -25,8 +25,8 @@ export const createPost = async (req, res) => {
 
 export const getFeedPosts = async (req, res) => {
     try {
-        const post = await Post.find();
-        res.status(200).json(post);
+        const posts = await Post.find().sort({ createdAt: -1 }).populate('userId', 'username');
+        res.status(200).json(posts);
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
