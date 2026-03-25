@@ -25,9 +25,9 @@ A mini social media application inspired by TaskPlanet's social feed.
 - [x] **Post Schema**: Create the blueprint for posts (text/image content, author reference, embedded likes array, embedded comments array).
 
 ### Phase 3: Backend REST APIs (🚧 In Progress)
-- [ ] **Auth**: `POST /api/auth/register` & `POST /api/auth/login` (JWT).
-- [ ] **Posts**: `POST /api/posts` (Create) & `GET /api/posts` (Fetch feed).
-- [ ] **Interactions**: `POST /api/posts/:id/like` & `POST /api/posts/:id/comment`.
+- [x] **Auth**: `POST /api/auth/register` & `POST /api/auth/login` (JWT).
+- [x] **Posts**: `POST /api/posts` (Create) & `GET /api/posts` (Fetch feed).
+- [/] **Interactions**: `PATCH /api/posts/:id/like` (Done) & `POST /api/posts/:id/comment` (Pending).
 
 ### Phase 4: Frontend Integration & State (⏳ Pending)
 - [ ] Setup API service functions.
