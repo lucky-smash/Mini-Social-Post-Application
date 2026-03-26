@@ -10,7 +10,7 @@ export default function Register() {
     const handleRegister = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post("http://localhost:5000/api/auth/register", {
+            const response = await axios.post("https://mini-social-post-application-3e4w.onrender.com/api/auth/register", {
                 username,
                 email,
                 password,

@@ -18,7 +18,7 @@ export default function PostCard({ post, refreshPosts }) {
 
     const handleLike = async () => {
         try {
-            await axios.patch(`http://localhost:5000/api/posts/${post._id}/like`, {}, {
+            await axios.patch(`https://mini-social-post-application-3e4w.onrender.com/api/posts/${post._id}/like`, {}, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             refreshPosts();
@@ -30,7 +30,7 @@ export default function PostCard({ post, refreshPosts }) {
     const handleComment = async () => {
         if (!commentText.trim()) return;
         try {
-            await axios.post(`http://localhost:5000/api/posts/${post._id}/comment`, {
+            await axios.post(`https://mini-social-post-application-3e4w.onrender.com/api/posts/${post._id}/comment`, {
                 text: commentText
             }, {
                 headers: { Authorization: `Bearer ${token}` }

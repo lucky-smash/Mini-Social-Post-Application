@@ -9,7 +9,7 @@ export default function Feed() {
 
     const getPosts = async () => {
         try {
-            const response = await axios.get("http://localhost:5000/api/posts", {
+            const response = await axios.get("https://mini-social-post-application-3e4w.onrender.com/api/posts", {
                 headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
             });
             setPosts(response.data);
@@ -25,7 +25,7 @@ export default function Feed() {
     const handleCreatePost = async () => {
         if (!description.trim()) return;
         try {
-            await axios.post("http://localhost:5000/api/posts/create", {
+            await axios.post("https://mini-social-post-application-3e4w.onrender.com/api/posts/create", {
                 userId: localStorage.getItem("userId"),
                 description: description
             }, {
