@@ -4,8 +4,8 @@ A full-stack MERN social media feed application inspired by TaskPlanet's social 
 
 ## 🚀 Live Demo
 
-- **Frontend:** [Vercel Link Here]
-- **Backend API:** [Render Link Here]
+- **Frontend:** [mini-social-post-application-ten.vercel.app](https://mini-social-post-application-ten.vercel.app/login)
+- **Backend API:** [mini-social-post-application-3e4w.onrender.com](https://mini-social-post-application-3e4w.onrender.com)
 
 ---
 
