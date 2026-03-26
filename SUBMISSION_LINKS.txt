@@ -1,0 +1,13 @@
+MINI SOCIAL POST APPLICATION - SUBMISSION LINKS
+================================================
+
+Task Frontend Link:
+https://mini-social-post-application-ten.vercel.app/login
+
+GitHub Public Repo Link:
+https://github.com/lucky-smash/Mini-Social-Post-Application
+
+Backend API (Render):
+https://mini-social-post-application-3e4w.onrender.com
+
+MongoDB Database: MongoDB Atlas (minisocial)
