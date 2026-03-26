@@ -184,6 +184,11 @@
   background: #e4e6eb; color: #bcc0c4;
   border: none; padding: 8px 18px;
   border-radius: 20px; font-weight: 700; font-size: 13px; letter-spacing: 0.5px;
+  cursor: pointer; transition: all 0.3s ease;
+}
+.post-btn-active {
+  background: #1877f2 !important; color: white !important;
+  box-shadow: 0 4px 12px rgba(24,119,242,0.3);
 }
 
 /* FEED PILLS */
@@ -338,3 +343,45 @@ body.dark-theme, body.dark-theme .feed-container, body.dark-theme .login-contain
 .dark-theme .post-actions { border-top-color: #3e4042 !important; }
 .dark-theme .post-actions button { color: #b0b3b8 !important; }
 .dark-theme .post-btn { background: #3a3b3c !important; color: #b0b3b8 !important; }
+
+/* COMMENTS SECTION */
+.comments-section {
+  padding: 15px 0 5px 0;
+  border-top: 1px solid #eee;
+}
+.comment-item {
+  padding: 8px 12px;
+  margin-bottom: 6px;
+  background: #f0f2f5;
+  border-radius: 12px;
+  font-size: 13px;
+  color: #333;
+}
+.comment-item strong { color: #1877f2; margin-right: 6px; }
+.comment-input-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+.comment-input-row input {
+  flex: 1;
+  padding: 8px 14px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  outline: none;
+  font-size: 13px;
+}
+.comment-input-row button {
+  padding: 8px 16px;
+  background: #1877f2;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* Dark mode for comments */
+.dark-theme .comment-item { background: #3a3b3c !important; color: #e4e6eb !important; }
+.dark-theme .comment-input-row input { background: #3a3b3c !important; border-color: #4e4f50 !important; color: #e4e6eb !important; }

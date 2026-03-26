@@ -1,8 +1,42 @@
 import { useState, useEffect } from 'react';
+import axios from 'axios';
 import PostCard from '../components/PostCard.jsx';
 
 export default function Feed() {
     const [isDark, setIsDark] = useState(false);
+    const [posts, setPosts] = useState([]);
+    const [description, setDescription] = useState("");
+
+    const getPosts = async () => {
+        try {
+            const response = await axios.get("http://localhost:5000/api/posts", {
+                headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+            });
+            setPosts(response.data);
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
+    useEffect(() => {
+        getPosts();
+    }, []);
+
+    const handleCreatePost = async () => {
+        if (!description.trim()) return;
+        try {
+            await axios.post("http://localhost:5000/api/posts/create", {
+                userId: localStorage.getItem("userId"),
+                description: description
+            }, {
+                headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+            });
+            setDescription("");
+            getPosts();
+        } catch (err) {
+            console.log("Failed to create post:", err);
+        }
+    };
 
     const toggleTheme = () => {
         setIsDark(!isDark);
@@ -45,7 +79,7 @@ export default function Feed() {
                 
                 <div className="create-post-input">
                     <img src="https://i.pravatar.cc/150?img=11" className="small-avatar" alt="Profile" />
-                    <input type="text" placeholder="What's on your mind?" />
+                    <input type="text" placeholder="What's on your mind?" value={description} onChange={(e) => setDescription(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && handleCreatePost()} />
                 </div>
                 
                 <div className="create-post-actions">
@@ -54,7 +88,7 @@ export default function Feed() {
                         <span>🎥</span>
                         <span className="promote-btn">📢 Promote</span>
                     </div>
-                    <button className="post-btn">➤ Post</button>
+                    <button className={`post-btn ${description.trim() ? 'post-btn-active' : ''}`} onClick={handleCreatePost}>➤ Post</button>
                 </div>
             </div>
 
@@ -69,9 +103,13 @@ export default function Feed() {
 
             {/* Posts Container */}
             <div className="posts-container">
-                {/* We will map Database posts here eventually. For now, we show the mockup. */}
-                <PostCard />
-                <PostCard />
+                {posts.map((post) => (
+                    <PostCard key={post._id} post={post} refreshPosts={getPosts} />
+                ))}
+                
+                {posts.length === 0 && (
+                    <p style={{ textAlign: 'center', padding: '40px', color: '#666', fontWeight: 'bold' }}>No posts yet! Be the first to create one.</p>
+                )}
             </div>
             
             {/* Bottom Nav Bar */}

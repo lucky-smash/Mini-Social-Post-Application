@@ -1,13 +1,13 @@
 # Mini Social Post Application - Progress Report
 
-**Last Updated:** Phase 2 Complete (Database Models Created)
+**Last Updated:** Phase 4 In Progress (Feed UI + API Integration)
 
 ## 📌 Project Overview
 A mini social media application inspired by TaskPlanet's social feed.
-- **Frontend**: React.js (Vite), Basic CSS (No Tailwind).
+- **Frontend**: React.js (Vite), Vanilla CSS, Axios, React Router DOM.
 - **Backend**: Node.js, Express.
 - **Database**: MongoDB (Mongoose).
-- **Key Constraint**: Strictly limited to 2 MongoDB Collections (`Users` and `Posts`). Likes and comments must be handled within the `Post` collection.
+- **Key Constraint**: Strictly limited to 2 MongoDB Collections (`Users` and `Posts`). Likes and comments are handled within the `Post` collection.
 
 ---
 
@@ -17,32 +17,56 @@ A mini social media application inspired by TaskPlanet's social feed.
 - [x] Scaffolding: Created `frontend/` (Vite) and `backend/` (npm init) directories.
 - [x] Backend Dependencies: Installed `express`, `mongoose`, `cors`, `dotenv`, and `nodemon`.
 - [x] Modules: Configured backend `package.json` to use modern ES6 modules (`"type": "module"`).
-- [x] Database Connection: Established a successful connection to MongoDB Atlas (`minisocial` database) inside `.env`.
+- [x] Database Connection: Established a successful connection to MongoDB Atlas (`minisocial` database).
 - [x] Server Setup: Wrote foundational `index.js` setting up CORS, JSON body-parsing, and a test route.
 
 ### Phase 2: Database Models (✅ Complete)
-- [x] **User Schema**: Create the blueprint for users (email, hashed password, username).
-- [x] **Post Schema**: Create the blueprint for posts (text/image content, author reference, embedded likes array, embedded comments array).
+- [x] **User Schema**: Blueprint for users (email, hashed password, username).
+- [x] **Post Schema**: Blueprint for posts (text/image content, author reference, embedded likes array, embedded comments array).
 
 ### Phase 3: Backend REST APIs (✅ Complete)
 - [x] **Auth**: `POST /api/auth/register` & `POST /api/auth/login` (JWT).
-- [x] **Posts**: `POST /api/posts` (Create) & `GET /api/posts` (Fetch feed).
+- [x] **Posts**: `POST /api/posts/create` (Create) & `GET /api/posts` (Fetch feed with `.populate()` and `.sort()`).
 - [x] **Interactions**: `PATCH /api/posts/:id/like` & `POST /api/posts/:id/comment`.
 
-### Summary of What You've Built So Far:
-1. **Server Setup**: Initialized Node.js, Express, and fully configured a live MongoDB Atlas connection.
-2. **Database Architecture**: Engineered professional `User` and `Post` Mongoose Schemas.
-3. **Advanced Security**: Implemented bcrypt and an intelligent JWT `authMiddleware`.
-4. **Full REST API System**: Designed and wired all 5 backend endpoints (Register, Login, Create Post, Get Feed, Like, Comment).
+### Phase 4: Frontend Integration & State (⏳ In Progress)
+- [x] Installed Axios and React Router DOM.
+- [x] Built Login page with JWT token persistence to `localStorage`.
+- [x] Built Register page with Axios registration API call.
+- [x] Configured `App.jsx` with `BrowserRouter`, `Routes`, and `Navigate`.
+- [x] Built **Feed Page** UI matching TaskPlanet mockup (top nav, search bar, create post section, filter pills, bottom nav).
+- [x] Built reusable **PostCard** component with dynamic props bound to MongoDB data.
+- [x] Implemented **responsive design** (mobile-first with PC media queries).
+- [x] Implemented **Dark Mode** toggle with full CSS theme overrides.
+- [x] Wired `GET /api/posts` fetch into Feed using `useEffect` + `axios`.
+- [x] Mapped real database posts dynamically into `PostCard` components.
+- [ ] Wire up **Create Post** (`POST /api/posts/create`) from the feed input box.
+- [ ] Wire up **Like** button (`PATCH /api/posts/:id/like`).
+- [ ] Wire up **Comment** functionality (`POST /api/posts/:id/comment`).
 
-### Phase 4: Frontend Integration & State (⏳ Pending)
-- [ ] Setup API service functions.
-- [ ] Build Login/Signup screens & manage JWT logic.
-- [ ] Build Feed UI (Card-based layout) and "Create Post" component.
-- [ ] Wire up "Like" and "Comment" buttons with instant, no-reload state updates.
+### Phase 5: Deployment (⏳ Pending)
+- [ ] Deploy backend to Render.
+- [ ] Deploy frontend to Vercel.
+- [ ] Update Axios base URLs to production endpoints.
+
+---
+
+## 🏗️ Summary of What's Been Built
+
+### Backend (100% Complete)
+1. **Server Setup**: Node.js + Express with live MongoDB Atlas connection.
+2. **Database Architecture**: Professional `User` and `Post` Mongoose Schemas.
+3. **Advanced Security**: bcrypt password hashing and JWT `authMiddleware`.
+4. **Full REST API**: 6 endpoints (Register, Login, Create Post, Get Feed, Like, Comment).
+
+### Frontend (80% Complete)
+1. **Auth Pages**: Fully functional Login & Register with `localStorage` token management.
+2. **Feed UI**: Pixel-perfect TaskPlanet-style social feed with profile pictures, badges, filter pills, and floating bottom nav.
+3. **Dark Mode**: Instant CSS theme toggle via moon button.
+4. **Responsive Layout**: Adapts seamlessly between mobile and desktop.
+5. **API Integration**: Feed dynamically fetches and renders real MongoDB posts.
 
 ---
 
 ## 🚀 Context for Next Session
-If you bring this file to a fresh chat, tell the AI: 
-**"We just finished completely building the entire MERN Backend REST API system (Phase 3). Our next immediate goal is Phase 4: Scaffolding the React Vite frontend and preparing our API service functions to connect to our local server."**
+**"We have completed the Backend API, the Frontend Auth pages, and the Feed UI. The Feed is currently fetching real posts from MongoDB. Next: wire up Create Post, Like, and Comment buttons, then deploy to Render + Vercel."**

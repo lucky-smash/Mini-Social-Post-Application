@@ -15,11 +15,11 @@ export default function Login() {
             });
 
             localStorage.setItem("token", response.data.token);
+            localStorage.setItem("userId", response.data.user._id);
             console.log("Success", response.data);
 
-            localStorage.setItem("userId", response.data.user._id);
-
-            alert("Login Hit Successfully!");
+            alert("Login Successful!");
+            window.location.href = "/feed";
 
         } catch (err) {
             console.log("Error", err.response.data);
